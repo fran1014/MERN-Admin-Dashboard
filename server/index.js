@@ -25,7 +25,7 @@ app.use(cors());
 /* ROUTES */
 app.use('/client', clientRoutes);
 app.use('/general', generalRoutes);
-app.use('/managemenet', managementRoutes);
+app.use('/management', managementRoutes);
 app.use('/sales', salesRoutes);
 
 /* MONGOOSE SET UP */
