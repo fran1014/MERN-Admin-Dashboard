@@ -27,3 +27,15 @@ app.use('/client', clientRoutes);
 app.use('/general', generalRoutes);
 app.use('/managemenet', managementRoutes);
 app.use('/sales', salesRoutes);
+
+/* MONGOOSE SET UP */
+const PORT = process.env.PORT || 9000;
+mongoose
+  .connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTipology: true,
+  })
+  .then(() => {
+    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+  })
+  .catch((error) => console.log(` ${error} did not connect`));
